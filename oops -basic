@@ -1,0 +1,15 @@
+Define Class to create a circle with radius rusing the Constructor. Define an Area method of the Class which Calculates the area of the circle. Define a Perimeter method of the class.
+
+program
+
+from math import pi
+Class Circle:
+def _init_(self, radius):
+     self.radius = radius
+def area(self):
+     return pi (self.radius **2)
+def perimeter (self):
+     return 2*pi* self. radius
+C =circle (5)
+print(f"{C.area():.2f}")
+print(C.perimeter())
