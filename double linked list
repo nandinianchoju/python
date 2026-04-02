@@ -1,0 +1,20 @@
+doubly linked list
+
+class Node :
+  def __init__(self,val):
+    self.prev=None
+    self.data=val
+    self.next=None
+def create Doublylinkedlist(arr):
+  head=None
+  for val in arr:
+    if(head==None):
+      head=Node(val)
+      temp=head
+    else:
+      newnode=Node(val)
+      newnode.prev=temp
+      temp.next=newnode
+      temp=temp.next
+arr[1,2,3]
+print(create Doublylinkedlist(arr))
