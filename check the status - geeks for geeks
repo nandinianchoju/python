@@ -1,0 +1,18 @@
+Given two integer variables a and b, and a boolean variable flag. The task is to check the status and return accordingly.
+
+Return True for the following cases:
+
+Either a or b (not both) is non-negative and the flag is false.
+Both a and b are negative and the flag is true.
+Otherwise, return False.
+
+class Solution:
+    def checkStatus(self, a, b, flag):
+       if((a >= 0) != (b >= 0) and not flag):
+           return True
+       elif(a<0 and b<0 and flag):
+           return True
+       else:
+           return False
+explanation-The first condition should check if exactly one of a or b is non-negative while flag is false. You can use the XOR operator (!=) to check this.
+The second condition is correct, as it checks if both a and b are negative and flag is true.
