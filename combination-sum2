@@ -1,0 +1,30 @@
+Combination sum
+Each number can be used only once
+
+def generate (ind,subset,ans,candidate,target):
+    if(target==0):
+        ans.append(subset.copy())
+        return
+    if(target<0):
+        return
+    if(ind==len(candidates)):
+        return
+    subset.append(candidates[ind])
+    generate(ind+1,subset,ans,candidates,target-candidates[ind])
+    subset.pop()
+    for i in range(ind+1,len(candidates)):
+        if candidates[ind]!=candidates[i]:
+            ind=i
+            generate(ind,subset,ans,candidates,target)
+            break
+def combinationsum2(candidates,target):
+    ind=0
+    ans=[]
+    subset=[]
+    candidates.sort()
+    generate(ind,subset,ans,candidates,target)
+    return ans
+candidates=list(map(int,input().split()))
+target=int(input())
+candidates.sort()
+print(combinationsum2(candidates,target))
